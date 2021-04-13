@@ -35,8 +35,25 @@ class StackTest {
         stack.push(secondNode);
         stack.push(thirdNode);
         stack.pop();
-
         stack.printStack();
     }
+
+    @Test
+    public void Given3Integers_WhenAddedShouldBe_Added_Last(){
+        Node<Integer> firstNode = new Node<>(70);
+        Node<Integer> secondNode = new Node<>(30);
+        Node<Integer> thirdNode = new Node<>(56);
+
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(firstNode);
+        stack.push(secondNode);
+        stack.push(thirdNode);
+        stack.printStack();
+
+        INode<Integer> peak = stack.peak();
+        Assertions.assertEquals(thirdNode, peak);
+    }
+
 
 }
