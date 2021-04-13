@@ -55,5 +55,25 @@ class StackTest {
         Assertions.assertEquals(thirdNode, peak);
     }
 
+    @Test
+    public void Given3IntegersIntoStack_LastAdded_ShouldRemoved(){
+        Node<Integer> firstNode = new Node<>(70);
+        Node<Integer> secondNode = new Node<>(30);
+        Node<Integer> thirdNode = new Node<>(56);
+
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(firstNode);
+        stack.push(secondNode);
+        stack.push(thirdNode);
+
+        INode<Integer> pop = stack.pop();
+
+        stack.printStack();
+
+
+        Assertions.assertEquals(thirdNode, pop);
+    }
+
 
 }
